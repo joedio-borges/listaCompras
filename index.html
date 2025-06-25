@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras - Supermercado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Compras</h1>
+        
+        <!-- Formulário para adicionar itens -->
+        <form id="itemForm">
+            <input type="text" id="itemInput" placeholder="Nome do item" required>
+            <input type="number" id="quantityInput" placeholder="Quantidade" min="1" value="1">
+            <input type="number" id="priceInput" placeholder="Preço (opcional)" min="0" step="0.01">
+            <button type="submit">Adicionar</button>
+        </form>
+        
+        <!-- Lista de itens -->
+        <ul id="itemList"></ul>
+        
+        <!-- Total da compra -->
+        <div id="totalSection">
+            <h3>Total: R$ <span id="totalValue">0.00</span></h3>
+        </div>
+        
+        <!-- Botões de controle -->
+        <button id="clearAll">Limpar Lista</button>
+        <button id="saveList">Salvar Lista</button>
+        <button id="loadList">Carregar Lista</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
